@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuizMaster - Test Your Knowledge</title>
+  <link rel="stylesheet" href="Quiz_App.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen active">
+      <h1>🧠 QuizMaster</h1>
+      <p class="subtitle">Welcome! Choose a category and difficulty, then start your quiz journey.</p>
+
+      <div>
+        <h3 style="color:#f3f4f6;margin-bottom:15px;">Choose Your Category</h3>
+        <div class="selection-grid">
+          <div class="selection-card" data-category="webdev"><h3>💻 Web Development</h3><p>HTML, CSS, JavaScript &amp; more</p></div>
+          <div class="selection-card" data-category="math"><h3>🔢 Mathematics</h3><p>Numbers, equations &amp; logic</p></div>
+          <div class="selection-card" data-category="gk"><h3>🌍 General Knowledge</h3><p>History, science &amp; culture</p></div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="color:#f3f4f6;margin:30px 0 15px;">Select Difficulty</h3>
+        <div class="selection-grid">
+          <div class="selection-card" data-difficulty="easy"><h3>😊 Easy</h3><p>For beginners</p></div>
+          <div class="selection-card" data-difficulty="medium"><h3>🤔 Medium</h3><p>A good challenge</p></div>
+          <div class="selection-card" data-difficulty="hard"><h3>🔥 Hard</h3><p>For experts</p></div>
+        </div>
+      </div>
+
+      <button id="startBtn" class="btn" disabled>Start Quiz</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quizScreen" class="screen">
+      <div class="timer" id="timer">30s</div>
+      <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="progress-text" id="progressText">Question 1 of 3</div>
+
+      <div class="question-container">
+        <div class="question"><h2 id="questionText">Loading question...</h2></div>
+        <div class="options" id="optionsContainer"></div>
+      </div>
+
+      <button id="nextBtn" class="btn" style="display:none;">Next Question</button>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="resultsScreen" class="screen">
+      <h1>🎉 Quiz Complete!</h1>
+      <div class="score-circle" id="scoreCircle"><span id="finalScore">0%</span></div>
+      <div id="feedback" class="feedback">
+        <h3 id="feedbackTitle">Great job!</h3>
+        <p id="feedbackText">Here's how you performed.</p>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px;">
+        <button id="reviewBtn" class="btn">📋 Review Answers</button>
+        <button id="retakeBtn" class="btn">🔄 Try Again</button>
+        <button id="newQuizBtn" class="btn">✨ New Quiz</button>
+      </div>
+    </div>
+
+    <!-- Review Screen -->
+    <div id="reviewScreen" class="screen">
+      <h2 style="margin-bottom:20px;">📋 Answer Review</h2>
+      <div id="reviewContainer"></div>
+      <button id="backToResultsBtn" class="btn">← Back to Results</button>
+    </div>
+  </div>
+
+  <script src="Quiz_App.js"></script>
+</body>
+</html>
